@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Practice\\WebAPIReact\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj": {}
+    "D:\\Practice\\MyShoppingCartApi\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj": {}
   },
   "projects": {
-    "D:\\Practice\\WebAPIReact\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj": {
+    "D:\\Practice\\MyShoppingCartApi\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Practice\\WebAPIReact\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj",
+        "projectUniqueName": "D:\\Practice\\MyShoppingCartApi\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj",
         "projectName": "MyShoppingCart",
-        "projectPath": "D:\\Practice\\WebAPIReact\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj",
+        "projectPath": "D:\\Practice\\MyShoppingCartApi\\MyShoppingCart\\MyShoppingCart\\MyShoppingCart.csproj",
         "packagesPath": "C:\\Users\\PCA196\\.nuget\\packages\\",
-        "outputPath": "D:\\Practice\\WebAPIReact\\MyShoppingCart\\MyShoppingCart\\obj\\",
+        "outputPath": "D:\\Practice\\MyShoppingCartApi\\MyShoppingCart\\MyShoppingCart\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.0, )"
