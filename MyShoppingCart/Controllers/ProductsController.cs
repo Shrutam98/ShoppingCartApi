@@ -24,7 +24,26 @@ namespace MyShoppingCart.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
-            return await _context.Product.ToListAsync();
+
+            return await _context.Product.ToListAsync();          
+            //return await _context.Product.Include(cat=>cat.Category).Include(pro=>pro.CategoryId).Where(cat => cat.CategoryId == id )
+
+            //var resProduct = await _context.Product.ToListAsync();
+            //var resCategory = await _context.Category.ToListAsync();
+            //var resData = (from p in resProduct
+            //           join c in resCategory on p.CategoryId equals c.CategoryId
+            //           select new Product
+            //           {
+            //               ProductName = p.ProductName,
+            //               Category = c.CategoryName,
+            //               Price = p.Price,
+            //               Discount = p.Discount,
+            //               Quantity = p.Quantity,
+            //               Gst = p.Gst
+            //           }).ToList();
+            
+            //return resData;
+
         }
 
         // GET: api/Products/5
@@ -45,7 +64,7 @@ namespace MyShoppingCart.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(int id, Product product)
+        public async Task<ActionResult<Product>> PutProduct(int id, Product product)
         {
             if (id != product.ProductId)
             {
@@ -69,8 +88,8 @@ namespace MyShoppingCart.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
+            return await GetProduct(product.ProductId);
+            //return NoContent();
         }
 
         // POST: api/Products
@@ -81,7 +100,6 @@ namespace MyShoppingCart.Controllers
         {
             _context.Product.Add(product);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetProduct", new { id = product.ProductId }, product);
         }
 
