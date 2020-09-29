@@ -291,5 +291,8 @@ D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp
 D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp3.1\MyShoppingCart.dll
 D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp3.1\MyShoppingCart.pdb
 D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp3.1\MyShoppingCart.genruntimeconfig.cache
+D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp3.1\MyShoppingCart.csproj.CoreCompileInputs.cache
 D:\Practice\MyShoppingCartApi\MyShoppingCart\MyShoppingCart\obj\Debug\netcoreapp3.1\MyShoppingCart.MvcApplicationPartsAssemblyInfo.cache

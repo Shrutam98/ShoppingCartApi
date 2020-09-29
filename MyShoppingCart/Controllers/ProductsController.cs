@@ -24,26 +24,7 @@ namespace MyShoppingCart.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
-
-            return await _context.Product.ToListAsync();          
-            //return await _context.Product.Include(cat=>cat.Category).Include(pro=>pro.CategoryId).Where(cat => cat.CategoryId == id )
-
-            //var resProduct = await _context.Product.ToListAsync();
-            //var resCategory = await _context.Category.ToListAsync();
-            //var resData = (from p in resProduct
-            //           join c in resCategory on p.CategoryId equals c.CategoryId
-            //           select new Product
-            //           {
-            //               ProductName = p.ProductName,
-            //               Category = c.CategoryName,
-            //               Price = p.Price,
-            //               Discount = p.Discount,
-            //               Quantity = p.Quantity,
-            //               Gst = p.Gst
-            //           }).ToList();
-            
-            //return resData;
-
+            return await _context.Product.Include(cat => cat.Category).ToListAsync();
         }
 
         // GET: api/Products/5
@@ -56,13 +37,12 @@ namespace MyShoppingCart.Controllers
             {
                 return NotFound();
             }
-
+            var category = _context.Category.FirstOrDefault(x => x.CategoryId == product.CategoryId);
+            product.Category = category;
             return product;
         }
 
         // PUT: api/Products/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<ActionResult<Product>> PutProduct(int id, Product product)
         {
@@ -89,12 +69,9 @@ namespace MyShoppingCart.Controllers
                 }
             }
             return await GetProduct(product.ProductId);
-            //return NoContent();
         }
 
         // POST: api/Products
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {

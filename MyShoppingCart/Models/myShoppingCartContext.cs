@@ -38,6 +38,8 @@ namespace MyShoppingCart.Models
 
             modelBuilder.Entity<Product>(entity =>
             {
+                entity.Property(e => e.Image).HasMaxLength(100);
+
                 entity.Property(e => e.ProductName)
                     .IsRequired()
                     .HasMaxLength(100);
@@ -45,7 +47,7 @@ namespace MyShoppingCart.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Product)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Product__Categor__1920BF5C");
+                    .HasConstraintName("FK__Product__Categor__398D8EEE");
             });
 
             OnModelCreatingPartial(modelBuilder);

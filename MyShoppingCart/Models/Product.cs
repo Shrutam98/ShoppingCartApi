@@ -12,6 +12,7 @@ namespace MyShoppingCart.Models
         public int? Quantity { get; set; }
         public double? Discount { get; set; }
         public double? Gst { get; set; }
+        public string Image { get; set; }
 
         public virtual Category Category { get; set; }
     }
