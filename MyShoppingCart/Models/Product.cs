@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyShoppingCart.Models
 {
@@ -13,7 +15,8 @@ namespace MyShoppingCart.Models
         public double? Discount { get; set; }
         public double? Gst { get; set; }
         public string Image { get; set; }
-
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
         public virtual Category Category { get; set; }
     }
 }
