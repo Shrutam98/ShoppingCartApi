@@ -95,7 +95,7 @@ namespace MyShoppingCart.Controllers
                 return NotFound();
             }
 
-            _context.Product.Remove(product);
+            _context.Product.Remove(product);       
             await _context.SaveChangesAsync();
 
             return product;
@@ -110,6 +110,7 @@ namespace MyShoppingCart.Controllers
         public async Task<string> SaveImage(IFormFile imageFile)
         {
             string image = new String(Path.GetFileNameWithoutExtension(imageFile.FileName).Take(10).ToArray()).Replace(' ', '-');
+            image = image + DateTime.Now.ToString("yymmssff") + Path.GetExtension(imageFile.FileName);
             var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "Images", image);
             using(var fileStream = new FileStream(imagePath, FileMode.Create))
             {
